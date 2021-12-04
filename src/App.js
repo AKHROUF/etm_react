@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Liste from './Liste';
 
 function App() {
-  return (
+  var x = 500;
+  return (    
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} style={{height:500}} className="App-logo" alt="logo" width={x} />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,6 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <Liste table="patients" page={x}  />
+      
     </div>
   );
 }
