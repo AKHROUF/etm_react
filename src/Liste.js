@@ -11,7 +11,7 @@ class Liste extends React.Component {
                 <table>
                     <thead><tr><th>ID</th><th>Nom</th><th>AGE</th></tr></thead>
                     <tbody>{this.state.data.map(x=>(
-                            <tr><td>{x.id}</td><td>{x.name}</td><td>{x.age}</td></tr>
+                            <tr key={x.id}><td>{x.id}</td><td>{x.name}</td><td>{x.age}</td></tr>
                         ))}</tbody>
                 </table>
             </div>

@@ -1,26 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import Liste from './Liste';
 import ExempleProps from './ExempleProps';
+import Somme1 from './Somme1';
+import Somme2 from './Somme2';
+import Patients from './Patients';
 
 function App() {
   var x = 500;
   return (    
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} style={{height:500}} className="App-logo" alt="logo" width={x} />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">   
+      <Patients /> 
+      <Somme1 />  
+      <Somme2 /> 
       <Liste table="patients" page={x}  />
       <ExempleProps />
     </div>
