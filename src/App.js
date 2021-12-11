@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Liste from './Liste';
+import ExempleProps from './ExempleProps';
 
 function App() {
   var x = 500;
@@ -21,7 +22,7 @@ function App() {
         </a>
       </header>
       <Liste table="patients" page={x}  />
-      
+      <ExempleProps />
     </div>
   );
 }
