@@ -17,7 +17,7 @@ class Somme2 extends React.Component {
         e.preventDefault()
     }
     render(){
-        // ssssss
+        ///
         return (
             <><form onSubmit={this.calculer} >
                 X = <input type="number" name="x" value={this.state.x}

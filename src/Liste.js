@@ -1,4 +1,5 @@
 import React from "react";
+import Detail from "./Detail";
 class Liste extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class Liste extends React.Component {
                             <tr key={x.id}><td>{x.id}</td><td>{x.name}</td><td>{x.age}</td></tr>
                         ))}</tbody>
                 </table>
+                <Detail info={this.props.table} />
             </div>
         )
     }

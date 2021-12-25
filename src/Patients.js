@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Patients extends React.Component {
     constructor(props) {
@@ -25,7 +26,8 @@ class Patients extends React.Component {
                 <tbody>{this.state.items.map(x=>(
                             <tr key={x.idPatient}><td>{x.idPatient}</td>
                             <td>{x.nom_patient}</td><td>{x.prenom_patient}</td>
-                            <td><a href="./" onClick={(e)=> { 
+                            <td><Link to={'/patient/' + x.idPatient}>MODIFIER</Link>
+                                <a href="./" onClick={(e)=> { 
                                                       e.preventDefault(); 
                                                       this.supprimer(x.idPatient);}
                                                     }>SUPPRIMER</a></td></tr>
