@@ -1,19 +1,22 @@
+import React, { Suspense } from "react";
 import './App.css';
-import Liste from './Liste';
-import ExempleProps from './ExempleProps';
-import Somme1 from './Somme1';
-import Somme2 from './Somme2';
-import Patients from './Patients';
+const Liste = React.lazy(()=> import('./Liste'));
+const ExempleProps = React.lazy(()=> import('./ExempleProps'));
+const Somme1 = React.lazy(()=> import('./Somme1'));
+const Somme2 = React.lazy(()=> import('./Somme2'));
+const Patients = React.lazy(()=> import('./Patients'));
 
 function App() {
   var x = 500;
   return (    
-    <div className="App">   
-      <Patients /> 
-      <Somme1 />  
-      <Somme2 /> 
-      <Liste table="patients" page={x}  />
-      <ExempleProps />
+    <div className="App">  
+      <Suspense fallback={<div>Chargement encours ...</div>}>
+        <Patients /> 
+        <Somme1 />  
+        <Somme2 /> 
+        <Liste table="patients" page={x}  />
+        <ExempleProps />
+      </Suspense> 
     </div>
   );
 }

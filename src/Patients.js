@@ -3,14 +3,14 @@ import React from "react";
 class Patients extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isLoaded:false, items:[]}
+        this.state = { charge:false, items:[]}
     }
     componentDidMount() { this.chargerPatient();  }
     chargerPatient(){ 
         fetch('http://127.0.0.1:8080/api/patients')
             .then(reponse=>reponse.json())
-            .then(json =>this.setState({isLoaded:true, items:json}))
-            .catch(err=>{ alert(err); this.setState({isLoaded:false, items:[]}) })
+            .then(json =>this.setState({charge:true, items:json}))
+            .catch(err=>{ alert(err); this.setState({charge:false, items:[]}) })
     }
     supprimer(id){             
         fetch('http://127.0.0.1:8080/api/patients/'+id, {method: 'DELETE'})
